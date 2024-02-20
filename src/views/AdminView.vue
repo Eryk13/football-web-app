@@ -1,6 +1,10 @@
 <script setup>
+import MainLayout from '@/components/layout/MainLayout.vue';
+
 </script>
 
 <template>
-    <h1>Admin</h1>
+    <MainLayout>
+        <h1>Admin</h1>
+    </MainLayout>
 </template>
