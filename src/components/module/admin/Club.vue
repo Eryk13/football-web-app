@@ -1,10 +1,12 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import Modal from '@/components/shared/Modal.vue';
+import { useRouter } from 'vue-router';
 
 const data = ref([]);
 const showDeleteClubModal = ref(false);
 const selectedClub = ref({});
+const router = useRouter();
 
 onMounted(async () => {
     await loadClubs()
@@ -60,7 +62,7 @@ const closeDeleteClubModal = () => {
                 <td>{{ club.name }}</td>
                 <td>{{ club.stadiumName }}</td>
                 <td>
-                    <button @click="">edit</button>
+                    <button @click="router.push({name: 'AdminClubEdit', params: {id: club.id}})">edit</button>
                     <button @click="openDeleteClubModal(club)">delete</button>
                 </td>
             </tr>
