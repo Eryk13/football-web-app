@@ -3,7 +3,7 @@ import { ref } from 'vue';
 
 
 const props = defineProps(['club', 'confirmName']);
-const emit = defineEmits(['submit', 'cancel']);
+const emit = defineEmits(['submitForm', 'cancel']);
 
 const club = ref(props.value?.club || {});
 const errors = ref({});
@@ -17,7 +17,7 @@ const onSubmit = () => {
         errors.value.stadium = "Stadium name is required";
     }
     if(Object.keys(errors.value).length === 0) {
-        emit('submit', club.value);
+        emit('submitForm', club.value);
     }
 }
 </script>

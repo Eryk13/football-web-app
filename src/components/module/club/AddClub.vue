@@ -31,5 +31,5 @@ const addClub = async(club) => {
 </script>
 
 <template>
-    <ClubForm :confirm-name="'Add'" @submit="onSubmit($event)" @cancel="onCancel()"></ClubForm>
+    <ClubForm :confirm-name="'Add'" @submitForm="onSubmit($event)" @cancel="onCancel()"></ClubForm>
 </template>
