@@ -5,10 +5,9 @@ import { RouterLink } from 'vue-router';
 
 <template>
     <header>
-    <RouterLink id="logo" to="/">Football</RouterLink>
+        <RouterLink id="logo" to="/">Football</RouterLink>
         <nav>
-        <RouterLink class="link" :to="{name: 'home'}">Home</RouterLink>
-        <RouterLink class="link" :to="{name: 'admin'}">Admin</RouterLink>
+            <RouterLink class="link" :to="{ name: 'home' }">Home</RouterLink>
         </nav>
     </header>
     <main>
@@ -17,36 +16,37 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
-    main{
-        margin: 0 10rem;
-    }
-    header{
-        border-bottom: solid 1px black;
-        padding: 1em 10em;
-        display: flex;
-        background-color: var(--color-primary);
-    }
+main {
+    margin: 0 10rem;
+}
 
-    #logo{
-        font-size: 2rem;
-        font-weight: 900;
-        font-family: "Anta", sans-serif;
-        margin-right: 2rem;
-    }
+header {
+    border-bottom: solid 1px black;
+    padding: 1em 10em;
+    display: flex;
+    background-color: var(--color-primary);
+}
 
-    nav{
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
+#logo {
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: "Anta", sans-serif;
+    margin-right: 2rem;
+}
 
-    .link{
-        font-family: "Anta", sans-serif;
-        font-weight: bold;
-        font-size: 1.2rem;
-    }
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
-    .link:hover{
-        color: white;
-    }
+.link {
+    font-family: "Anta", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.link:hover {
+    color: white;
+}
 </style>
