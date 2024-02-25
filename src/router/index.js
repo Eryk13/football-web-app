@@ -5,6 +5,8 @@ import AddClubView from "../views/AddClubView.vue";
 import EditClubView from "../views/EditClubView.vue";
 import AddNationalityView from "../views/AddNationalityView.vue";
 import EditNationalityView from "../views/EditNationalityView.vue";
+import EditPlayerView from "../views/EditPlayerView.vue";
+import AddPlayerView from "../views/AddPlayerView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +40,16 @@ const router = createRouter({
       path: "/admin/nationality/add",
       name: "AdminNationalityAdd",
       component: AddNationalityView
+    },
+    {
+      path: "/admin/player/edit/:id",
+      name: "AdminPlayerEdit",
+      component: EditPlayerView
+    },
+    {
+      path: "/admin/player/add",
+      name: "AdminPlayerAdd",
+      component: AddPlayerView
     }
   ],
 });
