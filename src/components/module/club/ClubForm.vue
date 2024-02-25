@@ -1,11 +1,13 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, onMounted, ref, toRef } from 'vue';
 
 
 const props = defineProps(['club', 'confirmName']);
 const emit = defineEmits(['submitForm', 'cancel']);
 
-const club = ref(props.value?.club || {});
+const club = computed(() => {
+    return props.club || {};
+})
 const errors = ref({});
 
 const onSubmit = () => {
