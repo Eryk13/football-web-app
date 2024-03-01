@@ -39,7 +39,7 @@ const loadFixtures = async() => {
             <tr v-for="fixture in fixtures">
                 <td>{{ fixture.homeClub.name }}</td>
                 <td>{{ fixture.awayClub.name }}</td>
-                <td>{{ moment(fixture.date).format('MMMM Do, hh:mm') || "Not provided"}}</td>
+                <td>{{ moment(fixture.date).format('MMMM Do, HH:mm') || "Not provided"}}</td>
                 <td>
                     <button @click="router.push({name: 'AdminFixtureEdit', params: {id: fixture.id}})">Edit</button>
                 </td>

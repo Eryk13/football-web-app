@@ -11,7 +11,7 @@ onMounted(async () => {
 
 const loadClubs = async() => {
     try{
-        const req = await fetch(import.meta.env.VITE_FOOTBALL_API + "/clubs", {headers: {"Accept": "application/json"}});
+        const req = await fetch(import.meta.env.VITE_FOOTBALL_API + "/clubs?order[name]=asc", {headers: {"Accept": "application/json"}});
         clubs.value = await req.json();
     }
     catch(e) {
