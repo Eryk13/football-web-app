@@ -11,10 +11,11 @@ const clubs = ref([]);
 onMounted(async() => {
     await loadClubs();
     await loadNationalities();
+    console.log(player.value)
 })
 
 const player = computed(() => {
-    return props.player || { club: "Club", nationality: "Nationality"};
+    return props.player || { club: {name: "Club"}, nationality: {name: "Nationality"}};
 })
 
 const errors = ref({});
@@ -27,13 +28,16 @@ const onSubmit = () => {
     if(player.value.number === undefined) {
         errors.value.number = "Number is required";
     }
-    if(player.value.nationality === "Nationality" || player.value.nationality === undefined) {
+    if(player.value.nationality.name === "Nationality" || player.value.nationality === undefined) {
         errors.value.nationality = "Nationality is required";
     }
-    if(player.value.club === "Club" || player.value.club === undefined) {
+    if(player.value.club.name === "Club" || player.value.club === undefined) {
         errors.value.club = "Club is required";
     }
     if(Object.keys(errors.value).length === 0) {
+        player.value.club = "/api/clubs/" + player.value.club.id;
+        player.value.nationality = "/api/nationalities/" + player.value.nationality.id,
+
         emit('submitForm', player.value);
     }
 }
@@ -79,15 +83,15 @@ const loadNationalities = async() => {
         </div>
         <div class="form__group">
             <select v-model="player.club">
-                <option>Club</option>
-                <option v-for="club in clubs" :value="club">{{ club.name }}</option>
+                <option :value="{name:'Club'}">Club</option>
+                <option v-for="club in clubs" :value="{id: club.id, name: club.name}">{{ club.name }}</option>
             </select>
             <p class="form__error-msg" v-if="errors.club">{{ errors.club }}</p>
         </div>
         <div class="form__group">
             <select v-model="player.nationality">
-                <option>Nationality</option>
-                <option v-for="nationality in nationalities" :value="nationality">{{ nationality.name }}</option>
+                <option :value="{name: 'Nationality'}">Nationality</option>
+                <option v-for="nationality in nationalities" :value="{id: nationality.id, name: nationality.name}">{{ nationality.name }}</option>
             </select>
             <p class="form__error-msg" v-if="errors.nationality">{{ errors.nationality }}</p>
         </div>

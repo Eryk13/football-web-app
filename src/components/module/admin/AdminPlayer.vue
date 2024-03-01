@@ -39,8 +39,8 @@ const loadPlayers = async() => {
             <tr v-for="player in players">
                 <td>{{ player.name }}</td>
                 <td>{{ player.number }}</td>
-                <td>{{ player.club }}</td>
-                <td>{{ player.nationality }}</td>
+                <td>{{ player.club.name }}</td>
+                <td>{{ player.nationality.name }}</td>
                 <td>
                     <button @click="router.push({name: 'AdminPlayerEdit', params: {id: player.id}})">Edit</button>
                 </td>

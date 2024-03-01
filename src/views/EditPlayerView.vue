@@ -24,6 +24,7 @@ onMounted(async () => {
 })
 
 const onSubmit = async (player) => {
+    console.log(player)
     try{
         await fetch(import.meta.env.VITE_FOOTBALL_API + "/players/" + player.id, {
             headers: {
