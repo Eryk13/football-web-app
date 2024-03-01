@@ -7,7 +7,8 @@ import AddNationalityView from "../views/AddNationalityView.vue";
 import EditNationalityView from "../views/EditNationalityView.vue";
 import EditPlayerView from "../views/EditPlayerView.vue";
 import AddPlayerView from "../views/AddPlayerView.vue";
-
+import AddFixtureView from "../views/AddFixtureView.vue";
+import EditFixtureView from "../views/EditFixtureView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -50,6 +51,16 @@ const router = createRouter({
       path: "/admin/player/add",
       name: "AdminPlayerAdd",
       component: AddPlayerView
+    },
+    {
+      path: "/admin/fixture/edit/:id",
+      name: "AdminFixtureEdit",
+      component: EditFixtureView
+    },
+    {
+      path: "/admin/fixture/add",
+      name: "AdminFixtureAdd",
+      component: AddFixtureView
     }
   ],
 });
