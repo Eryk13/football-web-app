@@ -7,7 +7,6 @@ const router = useRouter();
 
 onMounted(async () => {
     await loadFixtures();
-    console.log(fixtures.value)
 })
 
 const loadFixtures = async() => {

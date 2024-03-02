@@ -28,34 +28,11 @@ const onSubmit = () => {
             <p class="form__error-msg" v-if="errors.name">{{ errors.name }}</p>
         </div>
         <div class="form__actions">
-            <button>{{ props.confirmName || "Submit" }}</button>
-            <button @click="emit('cancel')">Cancel</button>
+            <button class="primary-btn">{{ props.confirmName || "Submit" }}</button>
+            <button class="primary-btn" @click="emit('cancel')">Cancel</button>
         </div>
     </form>
 </template>
 
 <style scoped>
-    .form{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .form__group{
-        width: 100%;
-    }
-
-    .form input{
-        padding: 1em;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    button:nth-child(n+2){
-        margin-left: 1rem;
-    }
-
-    .form__error-msg{
-        color: red;
-    }
 </style>

@@ -11,7 +11,6 @@ const clubs = ref([]);
 onMounted(async() => {
     await loadClubs();
     await loadNationalities();
-    console.log(player.value)
 })
 
 const player = computed(() => {
@@ -81,53 +80,28 @@ const loadNationalities = async() => {
             <input type="number" placeholder="Number" v-model="player.number"/>
             <p class="form__error-msg" v-if="errors.number">{{ errors.number }}</p>
         </div>
-        <div class="form__group">
-            <select v-model="player.club">
-                <option :value="{name:'Club'}">Club</option>
-                <option v-for="club in clubs" :value="{id: club.id, name: club.name}">{{ club.name }}</option>
-            </select>
-            <p class="form__error-msg" v-if="errors.club">{{ errors.club }}</p>
-        </div>
-        <div class="form__group">
-            <select v-model="player.nationality">
-                <option :value="{name: 'Nationality'}">Nationality</option>
-                <option v-for="nationality in nationalities" :value="{id: nationality.id, name: nationality.name}">{{ nationality.name }}</option>
-            </select>
-            <p class="form__error-msg" v-if="errors.nationality">{{ errors.nationality }}</p>
+        <div class="form_row">
+            <div class="form__group">
+                <select v-model="player.club">
+                    <option :value="{name:'Club'}">Club</option>
+                    <option v-for="club in clubs" :value="{id: club.id, name: club.name}">{{ club.name }}</option>
+                </select>
+                <p class="form__error-msg" v-if="errors.club">{{ errors.club }}</p>
+            </div>
+            <div class="form__group">
+                <select v-model="player.nationality">
+                    <option :value="{name: 'Nationality'}">Nationality</option>
+                    <option v-for="nationality in nationalities" :value="{id: nationality.id, name: nationality.name}">{{ nationality.name }}</option>
+                </select>
+                <p class="form__error-msg" v-if="errors.nationality">{{ errors.nationality }}</p>
+            </div>
         </div>
         <div class="form__actions">
-            <button>{{ props.confirmName || "Submit" }}</button>
-            <button @click="emit('cancel')">Cancel</button>
+            <button class="primary-btn">{{ props.confirmName || "Submit" }}</button>
+            <button class="primary-btn" @click="emit('cancel')">Cancel</button>
         </div>
     </form>
 </template>
 
 <style scoped>
-    .form{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .form__group{
-        width: 100%;
-    }
-
-    .form input{
-        padding: 1em;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    button:nth-child(n+2){
-        margin-left: 1rem;
-    }
-
-    .form__error-msg{
-        color: red;
-    }
-
-    select{
-        padding: 1em;
-    }
 </style>

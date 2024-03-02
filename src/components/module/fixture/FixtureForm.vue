@@ -51,56 +51,38 @@ const loadClubs = async() => {
 
 <template>
     <form class="form" @submit.prevent="onSubmit()">
-        <div class="form__group">
-            <select v-model="fixture.homeClub">
-                <option :value="{name:'Home'}">Home</option>
-                <option v-for="club in clubs" :value="{id: club.id, name: club.name}">{{ club.name }}</option>
-            </select>
-            <p class="form__error-msg" v-if="errors.homeclub">{{ errors.homeClub }}</p>
-        </div>
-        <div class="form__group">
-            <select v-model="fixture.awayClub">
-                <option :value="{name: 'Away'}">Away</option>
-                <option v-for="club in clubs" :value="{id: club.id, name: club.name}">{{ club.name }}</option>
-            </select>
-            <p class="form__error-msg" v-if="errors.awayClub">{{ errors.awayClub }}</p>
-        </div>
+        <div class="form_row">
+            <div class="form__group">
+                <select v-model="fixture.homeClub">
+                    <option :value="{name:'Home'}">Home</option>
+                    <option v-for="club in clubs" :value="{id: club.id, name: club.name}">{{ club.name }}</option>
+                </select>
+                <p class="form__error-msg" v-if="errors.homeclub">{{ errors.homeClub }}</p>
+            </div>
+            <div class="form__group">
+                <select v-model="fixture.awayClub">
+                    <option :value="{name: 'Away'}">Away</option>
+                    <option v-for="club in clubs" :value="{id: club.id, name: club.name}">{{ club.name }}</option>
+                </select>
+                <p class="form__error-msg" v-if="errors.awayClub">{{ errors.awayClub }}</p>
+            </div>
+        </div>    
         <div class="form__group">
             <input type="datetime-local" v-model="fixture.date"/>
         </div>
         <div class="form__actions">
-            <button>{{ props.confirmName || "Submit" }}</button>
-            <button @click="emit('cancel')">Cancel</button>
+            <button class="primary-btn">{{ props.confirmName || "Submit" }}</button>
+            <button class="primary-btn" @click="emit('cancel')">Cancel</button>
         </div>
     </form>
 </template>
 
 <style scoped>
-    .form{
+    .form_row{
         display: flex;
-        flex-direction: column;
         gap: 1rem;
     }
-
-    .form__group{
+    select {
         width: 100%;
-    }
-
-    .form input{
-        padding: 1em;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    button:nth-child(n+2){
-        margin-left: 1rem;
-    }
-
-    .form__error-msg{
-        color: red;
-    }
-
-    select{
-        padding: 1em;
     }
 </style>

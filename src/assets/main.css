@@ -164,4 +164,41 @@ table{
   width: 1px; /* shrinks table column to min width*/
 }
 
+/* FORM */
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2em 4em;
+}
 
+.form__group{
+  width: 100%;
+}
+
+.form input{
+  padding: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form select{
+  padding: 1em;
+}
+
+.form button:nth-child(n+2){
+  margin-left: 1rem;
+}
+
+.form__error-msg{
+  color: red;
+}
+
+.form_row{
+  display: flex;
+  gap: 1rem;
+}
+
+form select {
+  width: 100%;
+}
