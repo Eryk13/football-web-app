@@ -1,5 +1,5 @@
 <script setup>
-import AdminLayout from '@/components/layout/AdminLayou.vue';
+import AdminLayout from '@/components/layout/AdminLayout.vue';
 import AdminClub from '@/components/module/admin/AdminClub.vue';
 import AdminFixture from '@/components/module/admin/AdminFixture.vue';
 import AdminNationality from '@/components/module/admin/AdminNationality.vue';
@@ -21,22 +21,38 @@ const scrollTo = (el) => {
 <template>
     <AdminLayout>
         <div>
-            <button @click="scrollTo(club)">Clubs</button>
-            <button @click="scrollTo(nationality)">Nationalities</button>
-            <button @click="scrollTo(player)">Players</button>
-            <button @click="scrollTo(fixture)">Fixtures</button>
+            <nav>
+                <a class="link" @click="scrollTo(club)">Clubs</a>
+                <a class="link" @click="scrollTo(nationality)">Nationalities</a>
+                <a class="link" @click="scrollTo(player)">Players</a>
+                <a class="link" @click="scrollTo(fixture)">Fixtures</a>
+            </nav>
         </div>
-        <section ref="club">
+        <section class="table-section" ref="club">
             <AdminClub></AdminClub>
         </section>
-        <section ref="nationality">
+        <section class="table-section" ref="nationality">
             <AdminNationality></AdminNationality>
         </section>
-        <section ref="player">
+        <section class="table-section" ref="player">
             <AdminPlayer></AdminPlayer>
         </section>
-        <div ref="fixture">
+        <section class="table-section" ref="fixture">
             <AdminFixture></AdminFixture>
-        </div>
+        </section>
     </AdminLayout>
 </template>
+
+<style scoped>
+    nav{
+        border-bottom: solid 1px black;
+        padding: 1em 4em;
+        display: flex;
+        justify-content: space-between;
+        background: var(--color-base);
+    }
+    div{
+        top: 0;
+        position: sticky;
+    }
+</style>

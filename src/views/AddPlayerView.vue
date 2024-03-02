@@ -1,10 +1,10 @@
 <script setup>
-import AdminLayou from '@/components/layout/AdminLayou.vue';
+import AdminLayout from '@/components/layout/AdminLayout.vue';
 import AddPlayer from '@/components/module/player/AddPlayer.vue';
 </script>
 
 <template>
-    <AdminLayou>
+    <AdminLayout>
         <AddPlayer></AddPlayer>
-    </AdminLayou>
+    </AdminLayout>
 </template>

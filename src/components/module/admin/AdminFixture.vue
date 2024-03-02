@@ -22,17 +22,17 @@ const loadFixtures = async() => {
 </script>
 
 <template>
-    <div class="header">
+    <div class="table-section_header">
         <h2>Fixtures</h2>
-        <button @click="router.push({name: 'AdminFixtureAdd'})">Add fixture</button>
+        <button class="primary-btn" @click="router.push({name: 'AdminFixtureAdd'})">Add fixture</button>
     </div>
     <table>
         <thead>
             <tr>
-                <th>home</th>
-                <th>away</th>
-                <th>date</th>
-                <th>actions</th>
+                <th>Home</th>
+                <th>Away</th>
+                <th>Date</th>
+                <th class="shrink-col">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -41,7 +41,7 @@ const loadFixtures = async() => {
                 <td>{{ fixture.awayClub.name }}</td>
                 <td>{{ moment(fixture.date).format('MMMM Do, HH:mm') || "Not provided"}}</td>
                 <td>
-                    <button @click="router.push({name: 'AdminFixtureEdit', params: {id: fixture.id}})">Edit</button>
+                    <button class="primary-btn" @click="router.push({name: 'AdminFixtureEdit', params: {id: fixture.id}})">Edit</button>
                 </td>
             </tr>
         </tbody>
@@ -49,22 +49,4 @@ const loadFixtures = async() => {
 </template>
 
 <style scoped>
-    .header{
-        display: flex;
-        align-items: center;
-    }
-    
-    .header > button{
-        margin-left: 1rem;
-    }
-
-    td, th{
-        border: solid 1px black;
-        padding: .5em 1em;
-    }
-
-    table{
-        border-collapse: collapse;
-        width: 100%;
-    }
 </style>

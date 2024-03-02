@@ -1,5 +1,5 @@
 <script setup>
-import AdminLayout from '@/components/layout/AdminLayou.vue';
+import AdminLayout from '@/components/layout/AdminLayout.vue';
 import PlayerForm from '@/components/module/player/PlayerForm.vue';
 import { onMounted, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';

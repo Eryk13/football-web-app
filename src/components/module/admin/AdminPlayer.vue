@@ -21,18 +21,18 @@ const loadPlayers = async() => {
 </script>
 
 <template>
-    <div class="header">
+    <div class="table-section_header">
         <h2>Players</h2>
-        <button @click="router.push({name: 'AdminPlayerAdd'})">Add Player</button>
+        <button class="primary-btn" @click="router.push({name: 'AdminPlayerAdd'})">Add Player</button>
     </div>
     <table>
         <thead>
             <tr>
-                <th>name</th>
-                <th>number</th>
-                <th>club</th>
-                <th>nationality</th>
-                <th>actions</th>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Club</th>
+                <th>Nationality</th>
+                <th class="shrink-col">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -42,7 +42,7 @@ const loadPlayers = async() => {
                 <td>{{ player.club.name }}</td>
                 <td>{{ player.nationality.name }}</td>
                 <td>
-                    <button @click="router.push({name: 'AdminPlayerEdit', params: {id: player.id}})">Edit</button>
+                    <button class="primary-btn" @click="router.push({name: 'AdminPlayerEdit', params: {id: player.id}})">Edit</button>
                 </td>
             </tr>
         </tbody>
@@ -50,22 +50,4 @@ const loadPlayers = async() => {
 </template>
 
 <style scoped>
-    .header{
-        display: flex;
-        align-items: center;
-    }
-    
-    .header > button{
-        margin-left: 1rem;
-    }
-
-    td, th{
-        border: solid 1px black;
-        padding: .5em 1em;
-    }
-
-    table{
-        border-collapse: collapse;
-        width: 100%;
-    }
 </style>

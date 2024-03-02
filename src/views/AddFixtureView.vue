@@ -1,10 +1,10 @@
 <script setup>
-import AdminLayou from '@/components/layout/AdminLayou.vue';
+import AdminLayout from '@/components/layout/AdminLayout.vue';
 import AddFixture from '@/components/module/fixture/AddFixture.vue';
 </script>
 
 <template>
-    <AdminLayou>
+    <AdminLayout>
         <AddFixture></AddFixture>
-    </AdminLayou>
+    </AdminLayout>
 </template>

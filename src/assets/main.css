@@ -1,10 +1,13 @@
 :root{
-  --color-primary: #0077b6;
+  --color-base: white;
+  --color-font: black;
+  --color-primary: #52b788;
 }
 
 body{
   margin: 0;
   font-family: "Roboto", sans-serif;
+  background-color: var(--color-base);
 }
 
 a{
@@ -12,12 +15,153 @@ a{
   color: black;
 }
 
-button{
+/* || TYPOGRAPHY */
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.anta-regular {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* TEXT */
+h2{
+  font-weight: 400;
+}
+
+/* || BRANDING */
+
+.logo{
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin: 1rem;
+}
+
+/* || NAV */
+
+ .link:hover{
+  cursor: pointer;
+  color: var(--color-primary)
+}
+
+/* || SECTION */
+
+.table-section_header{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.table-section{
+  padding: 0 4em;
+  margin-top: 1rem;
+}
+
+/* || BUTTON */
+
+.primary-btn{
+  background-color: var(--color-primary);
+  border: none;
+  padding: .5em .9em;
+  border-radius: .3rem;
+  border: solid 2px var(--color-base);
+}
+
+.primary-btn:hover{
+  cursor: pointer;
+  border: solid 2px var(--color-primary);
+  color: var(--color-base);
+}
+
+/* || TABLE */
+
+td, th{
+  border: solid 1px black;
   padding: .5em 1em;
 }
 
-.section-header{
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+th{
+  text-align: left;
+  border-bottom: 2px solid black !important;
 }
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.shrink-col{
+  width: 1px; /* shrinks table column to min width*/
+}
+
+

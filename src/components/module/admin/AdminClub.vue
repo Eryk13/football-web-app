@@ -21,16 +21,16 @@ const loadClubs = async() => {
 </script>
 
 <template>
-    <div class="header">
+    <div class="table-section_header">
         <h2>Clubs</h2>
-        <button @click="router.push({name: 'AdminClubAdd'})">Add club</button>
+        <button class="primary-btn" @click="router.push({name: 'AdminClubAdd'})">Add club</button>
     </div>
     <table>
         <thead>
             <tr>
-                <th>name</th>
-                <th>stadium</th>
-                <th>actions</th>
+                <th>Name</th>
+                <th>Stadium</th>
+                <th class="shrink-col">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -38,30 +38,9 @@ const loadClubs = async() => {
                 <td>{{ club.name }}</td>
                 <td>{{ club.stadiumName }}</td>
                 <td>
-                    <button @click="router.push({name: 'AdminClubEdit', params: {id: club.id}})">Edit</button>
+                    <button class="primary-btn" @click="router.push({name: 'AdminClubEdit', params: {id: club.id}})">Edit</button>
                 </td>
             </tr>
         </tbody>
     </table>
 </template>
-
-<style scoped>
-    .header{
-        display: flex;
-        align-items: center;
-    }
-    
-    .header > button{
-        margin-left: 1rem;
-    }
-
-    td, th{
-        border: solid 1px black;
-        padding: .5em 1em;
-    }
-
-    table{
-        border-collapse: collapse;
-        width: 100%;
-    }
-</style>
