@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import AdminView from "../views/AdminView.vue";
-import AddClubView from "../views/AddClubView.vue";
-import EditClubView from "../views/EditClubView.vue";
-import AddNationalityView from "../views/AddNationalityView.vue";
-import EditNationalityView from "../views/EditNationalityView.vue";
-import EditPlayerView from "../views/EditPlayerView.vue";
-import AddPlayerView from "../views/AddPlayerView.vue";
-import AddFixtureView from "../views/AddFixtureView.vue";
-import EditFixtureView from "../views/EditFixtureView.vue";
+import AdminView from "../views/admin/AdminView.vue";
+import AddClubView from "../views/admin/AddClubView.vue";
+import EditClubView from "../views/admin/EditClubView.vue";
+import AddNationalityView from "../views/admin/AddNationalityView.vue";
+import EditNationalityView from "../views/admin/EditNationalityView.vue";
+import EditPlayerView from "../views/admin/EditPlayerView.vue";
+import AddPlayerView from "../views/admin/AddPlayerView.vue";
+import AddFixtureView from "../views/admin/AddFixtureView.vue";
+import EditFixtureView from "../views/admin/EditFixtureView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
